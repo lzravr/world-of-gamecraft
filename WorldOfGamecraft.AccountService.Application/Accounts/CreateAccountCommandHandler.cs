@@ -21,7 +21,7 @@ public sealed class CreateAccountCommandHandler : IRequestHandler<CreateAccountC
 
     public async Task<Guid> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
     {
-        (byte[] Hash, byte[] Salt) hashAndSalt =  _authenticationService.GetPasswordHashAndSaltAsync(request.Password);
+        (byte[] Hash, byte[] Salt) hashAndSalt =  _authenticationService.GetPasswordHashAndSalt(request.Password);
 
         var account = Account.Create(
             request.Username,

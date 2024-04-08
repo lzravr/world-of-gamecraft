@@ -2,7 +2,7 @@
 using WorldOfGamecraft.AccountService.Domain.Abstractions;
 
 namespace WorldOfGamecraft.AccountService.Infrastructure.Repositories;
-internal abstract class Repository<TEntity, TId>
+public abstract class Repository<TEntity, TId>
     where TEntity : Entity
 {
     protected readonly ApplicationDbContext DbContext;
@@ -22,4 +22,8 @@ internal abstract class Repository<TEntity, TId>
         DbContext.Add(entity);
     }
 
+    public void Update(TEntity entity)
+    {
+        DbContext.Update(entity);
+    }
 }
