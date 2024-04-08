@@ -5,19 +5,19 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountService", "AccountService", "{30D50322-E275-45A2-8336-9156A1DC5269}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.AccountService.Domain", "WorldOfGamecraft.AccountService.Domain\WorldOfGamecraft.AccountService.Domain.csproj", "{3CFFF06A-2DB2-41D4-BE61-09D46CEFD64D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.AccountService.Domain", "WorldOfGamecraft.AccountService.Domain\WorldOfGamecraft.AccountService.Domain.csproj", "{3CFFF06A-2DB2-41D4-BE61-09D46CEFD64D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{120FCF10-FC43-45F4-B9A5-9547F214C1A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.AccountService.Application", "WorldOfGamecraft.AccountService.Application\WorldOfGamecraft.AccountService.Application.csproj", "{DDC83084-8B31-42D5-88FE-14F058404FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.AccountService.Application", "WorldOfGamecraft.AccountService.Application\WorldOfGamecraft.AccountService.Application.csproj", "{DDC83084-8B31-42D5-88FE-14F058404FB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.AccountService.Infrastructure", "WorldOfGamecraft.AccountService.Infrastructure\WorldOfGamecraft.AccountService.Infrastructure.csproj", "{59F37290-AF37-413D-B9EC-3BE0C7B1C338}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.AccountService.Infrastructure", "WorldOfGamecraft.AccountService.Infrastructure\WorldOfGamecraft.AccountService.Infrastructure.csproj", "{59F37290-AF37-413D-B9EC-3BE0C7B1C338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.AccountService.Api", "WorldOfGamecraft.AccountService.Api\WorldOfGamecraft.AccountService.Api.csproj", "{C6A3514B-EDB6-4F26-BE94-A64FEEA2051C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.AccountService.Api", "WorldOfGamecraft.AccountService.Api\WorldOfGamecraft.AccountService.Api.csproj", "{C6A3514B-EDB6-4F26-BE94-A64FEEA2051C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CharacterService", "CharacterService", "{5FA994F7-D6B5-42BE-9A29-FFA4A343E312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.CharacterService.Domain", "WorldOfGamecraft.CharacterService.Domain\WorldOfGamecraft.CharacterService.Domain.csproj", "{E2D0F2CE-7CD0-427C-838E-3F2EEE633DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.CharacterService.Domain", "WorldOfGamecraft.CharacterService.Domain\WorldOfGamecraft.CharacterService.Domain.csproj", "{E2D0F2CE-7CD0-427C-838E-3F2EEE633DE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C8A96B0C-C496-40C0-9673-99A1F6F086DF}"
 EndProject
@@ -25,11 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A3E7A124-0BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0D8B619E-357A-46DF-8BC0-5B86CC27EDB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.CharacterService.Application", "WorldOfGamecraft.CharacterService.Application\WorldOfGamecraft.CharacterService.Application.csproj", "{58E4AC41-9DD8-40E2-9582-6E63E3133916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.CharacterService.Application", "WorldOfGamecraft.CharacterService.Application\WorldOfGamecraft.CharacterService.Application.csproj", "{58E4AC41-9DD8-40E2-9582-6E63E3133916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.CharacterService.Infrastructure", "WorldOfGamecraft.CharacterService.Infrastructure\WorldOfGamecraft.CharacterService.Infrastructure.csproj", "{0B1B40F7-1561-4D06-BA7A-615C9F903FE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.CharacterService.Infrastructure", "WorldOfGamecraft.CharacterService.Infrastructure\WorldOfGamecraft.CharacterService.Infrastructure.csproj", "{0B1B40F7-1561-4D06-BA7A-615C9F903FE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfGamecraft.CharacterService.Api", "WorldOfGamecraft.CharacterService.Api\WorldOfGamecraft.CharacterService.Api.csproj", "{34BE91AB-CB44-447B-95FE-48FF0478AE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldOfGamecraft.CharacterService.Api", "WorldOfGamecraft.CharacterService.Api\WorldOfGamecraft.CharacterService.Api.csproj", "{34BE91AB-CB44-447B-95FE-48FF0478AE77}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3DB02F19-4764-4C9E-B21D-4488C0619109}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{34BE91AB-CB44-447B-95FE-48FF0478AE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34BE91AB-CB44-447B-95FE-48FF0478AE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34BE91AB-CB44-447B-95FE-48FF0478AE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB02F19-4764-4C9E-B21D-4488C0619109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB02F19-4764-4C9E-B21D-4488C0619109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB02F19-4764-4C9E-B21D-4488C0619109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB02F19-4764-4C9E-B21D-4488C0619109}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

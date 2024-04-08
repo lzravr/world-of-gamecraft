@@ -26,7 +26,7 @@ var app = builder.Build();
     app.AddMigrations();
 //}
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
