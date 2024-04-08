@@ -16,6 +16,8 @@ public static class DependencyInjection
 
         AddPersistence(services, configuration);
 
+        services.AddScoped<IJwtService, JwtService>();
+
         return services;
     }
 

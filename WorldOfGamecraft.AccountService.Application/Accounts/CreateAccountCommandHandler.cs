@@ -9,12 +9,14 @@ public sealed class CreateAccountCommandHandler : IRequestHandler<CreateAccountC
     private readonly IAuthenticationService _authenticationService;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IAccountRepository _accountRepository;
+    private readonly IJwtService _jwtService;
 
-    public CreateAccountCommandHandler(IAuthenticationService authenticationService, IUnitOfWork unitOfWork, IAccountRepository accountRepository)
+    public CreateAccountCommandHandler(IAuthenticationService authenticationService, IUnitOfWork unitOfWork, IAccountRepository accountRepository, IJwtService jwtService)
     {
         _authenticationService = authenticationService;
         _unitOfWork = unitOfWork;
         _accountRepository = accountRepository;
+        _jwtService = jwtService;
     }
 
     public async Task<Guid> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
@@ -28,6 +30,8 @@ public sealed class CreateAccountCommandHandler : IRequestHandler<CreateAccountC
             null,
             null,
             request.Role);
+
+        var token = _jwtService.GenerateJwtToken(account);
 
         _accountRepository.Add(account);
         await _unitOfWork.SaveChangesAsync();
