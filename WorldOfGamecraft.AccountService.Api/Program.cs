@@ -1,3 +1,4 @@
+using WorldOfGamecraft.AccountService.Api.Extensions;
 using WorldOfGamecraft.AccountService.Application;
 using WorldOfGamecraft.AccountService.Infrastructure;
 
@@ -17,11 +18,13 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
+    app.AddMigrations();
+//}
 
 app.UseHttpsRedirection();
 

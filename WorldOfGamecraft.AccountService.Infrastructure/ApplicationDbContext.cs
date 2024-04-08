@@ -9,13 +9,5 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     {
 
     }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-
-        base.OnModelCreating(modelBuilder);
-    }
-
-
-    //public DbSet<Account> Accounts { get; set; }
+    public DbSet<Account> Accounts { get; set; }
 }
