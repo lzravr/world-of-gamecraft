@@ -9,5 +9,13 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     {
 
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Account>()
+            .HasIndex(a => a.Username)
+            .IsUnique();
+    }
+
     public DbSet<Account> Accounts { get; set; }
 }
