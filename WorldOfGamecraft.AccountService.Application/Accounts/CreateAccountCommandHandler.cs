@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using WorldOfGamecraft.AccountService.Application.Authentication;
-using WorldOfGamecraft.AccountService.Domain.Abstractions;
 using WorldOfGamecraft.AccountService.Domain.Accounts;
+using WorldOfGamecraft.Common.Data;
 
 namespace WorldOfGamecraft.AccountService.Application.Accounts;
 public sealed class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, Guid>

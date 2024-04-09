@@ -2,10 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WorldOfGamecraft.AccountService.Application.Authentication;
-using WorldOfGamecraft.AccountService.Domain.Abstractions;
 using WorldOfGamecraft.AccountService.Domain.Accounts;
 using WorldOfGamecraft.AccountService.Infrastructure.Authentication;
 using WorldOfGamecraft.AccountService.Infrastructure.Repositories;
+using WorldOfGamecraft.Common.Data;
 
 namespace WorldOfGamecraft.AccountService.Infrastructure;
 public static class DependencyInjection

@@ -1,5 +1,4 @@
-﻿
-namespace WorldOfGamecraft.AccountService.Domain.Abstractions;
+﻿namespace WorldOfGamecraft.Common.Abstractions;
 public abstract class Entity : IEntity
 {
     private readonly List<IDomainEvent> _domainEvents = new();
@@ -12,7 +11,7 @@ public abstract class Entity : IEntity
     }
 
     protected Entity() { }
-    
+
     public void ClearDomainEvents()
     {
         _domainEvents.Clear();

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WorldOfGamecraft.AccountService.Domain.Abstractions;
+using WorldOfGamecraft.Common.Abstractions;
 
 namespace WorldOfGamecraft.AccountService.Infrastructure.Repositories;
 public abstract class Repository<TEntity, TId>

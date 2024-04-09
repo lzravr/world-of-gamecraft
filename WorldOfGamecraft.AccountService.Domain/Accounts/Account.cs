@@ -1,5 +1,5 @@
-﻿using WorldOfGamecraft.AccountService.Domain.Abstractions;
-using WorldOfGamecraft.AccountService.Domain.Accounts.Events;
+﻿using WorldOfGamecraft.AccountService.Domain.Accounts.Events;
+using WorldOfGamecraft.Common.Abstractions;
 
 namespace WorldOfGamecraft.AccountService.Domain.Accounts;
 public class Account : Entity

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace WorldOfGamecraft.AccountService.Domain.Abstractions;
+namespace WorldOfGamecraft.Common.Abstractions;
 
 public interface IDomainEvent : INotification
 {

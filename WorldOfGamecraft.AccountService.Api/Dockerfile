@@ -12,6 +12,7 @@ WORKDIR /src
 COPY ["WorldOfGamecraft.AccountService.Api/WorldOfGamecraft.AccountService.Api.csproj", "WorldOfGamecraft.AccountService.Api/"]
 COPY ["WorldOfGamecraft.AccountService.Application/WorldOfGamecraft.AccountService.Application.csproj", "WorldOfGamecraft.AccountService.Application/"]
 COPY ["WorldOfGamecraft.AccountService.Domain/WorldOfGamecraft.AccountService.Domain.csproj", "WorldOfGamecraft.AccountService.Domain/"]
+COPY ["WorldOfGamecraft.Common/WorldOfGamecraft.Common.csproj", "WorldOfGamecraft.Common/"]
 COPY ["WorldOfGamecraft.AccountService.Infrastructure/WorldOfGamecraft.AccountService.Infrastructure.csproj", "WorldOfGamecraft.AccountService.Infrastructure/"]
 RUN dotnet restore "./WorldOfGamecraft.AccountService.Api/WorldOfGamecraft.AccountService.Api.csproj"
 COPY . .

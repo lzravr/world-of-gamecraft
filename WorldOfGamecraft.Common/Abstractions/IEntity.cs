@@ -1,4 +1,4 @@
-﻿namespace WorldOfGamecraft.AccountService.Domain.Abstractions;
+﻿namespace WorldOfGamecraft.Common.Abstractions;
 public interface IEntity
 {
     void ClearDomainEvents();

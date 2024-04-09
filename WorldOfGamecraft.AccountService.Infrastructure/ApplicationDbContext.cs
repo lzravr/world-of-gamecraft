@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WorldOfGamecraft.AccountService.Domain.Abstractions;
 using WorldOfGamecraft.AccountService.Domain.Accounts;
+using WorldOfGamecraft.Common.Data;
 
 namespace WorldOfGamecraft.AccountService.Infrastructure;
 public sealed class ApplicationDbContext : DbContext, IUnitOfWork
