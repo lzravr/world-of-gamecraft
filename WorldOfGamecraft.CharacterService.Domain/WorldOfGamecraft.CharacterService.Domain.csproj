@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WorldOfGamecraft.Common\WorldOfGamecraft.Common.csproj" />
+  </ItemGroup>
+
 </Project>

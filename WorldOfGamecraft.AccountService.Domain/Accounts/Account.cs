@@ -4,7 +4,7 @@ using WorldOfGamecraft.Common.Abstractions;
 namespace WorldOfGamecraft.AccountService.Domain.Accounts;
 public class Account : Entity
 {
-    public Account(string username, byte[] passwordHash, byte[] passwordSalt, string? refreshToken, DateTime? validUntil, Role role)
+    private Account(string username, byte[] passwordHash, byte[] passwordSalt, string? refreshToken, DateTime? validUntil, Role role)
     {
         Username = username;
         PasswordHash = passwordHash;
