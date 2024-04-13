@@ -2,7 +2,6 @@
 using MediatR;
 using WorldOfGamecraft.CharacterService.Domain.Characters;
 using WorldOfGamecraft.Common;
-using WorldOfGamecraft.Common.Data;
 using WorldOfGamecraft.Common.IdentityService;
 
 namespace WorldOfGamecraft.CharacterService.Application.Characters.GetCharacters;
