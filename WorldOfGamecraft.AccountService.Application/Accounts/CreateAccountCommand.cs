@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WorldOfGamecraft.AccountService.Domain.Accounts;
+using WorldOfGamecraft.Common;
 
 namespace WorldOfGamecraft.AccountService.Application.Accounts;
 public sealed record CreateAccountCommand(string Username, string Password, Role Role) : IRequest<Guid>;

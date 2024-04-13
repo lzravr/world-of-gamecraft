@@ -1,4 +1,5 @@
 ﻿using WorldOfGamecraft.AccountService.Domain.Accounts.Events;
+using WorldOfGamecraft.Common;
 using WorldOfGamecraft.Common.Abstractions;
 
 namespace WorldOfGamecraft.AccountService.Domain.Accounts;

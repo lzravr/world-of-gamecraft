@@ -40,4 +40,16 @@ public class AccountController : ControllerBase
 
         return Ok(result);
     }
+
+    [Authorize(Roles = "Service")]
+    [HttpGet]
+    [Route("{username}")]
+    public async Task<ActionResult<string>> DoesAccountExist(string username, CancellationToken cancellationToken)
+    {
+        var query = new GetAccountQuery(username);
+
+        var result = await _sender.Send(query, cancellationToken);
+
+        return Ok(result);
+    }
 }

@@ -1,4 +1,4 @@
-﻿using WorldOfGamecraft.AccountService.Domain.Accounts;
+﻿using WorldOfGamecraft.Common;
 
 namespace WorldOfGamecraft.AccountService.Api.Controllers.Accounts;
 
