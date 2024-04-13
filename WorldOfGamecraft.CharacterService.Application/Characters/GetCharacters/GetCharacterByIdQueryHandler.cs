@@ -29,6 +29,11 @@ public sealed class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterB
 
         var character = await _characterRepository.GetByIdAsync(request.Id, cancellationToken);
 
+        if (character is null)
+        {
+            throw new CharacterDoesNotExistException();
+        }
+
         if (accountId is not null && !accountId.Equals(character?.CreatedBy.ToString()))
         {
             throw new NotCharacterOwnerException();

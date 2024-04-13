@@ -22,11 +22,7 @@ public sealed class Item : Entity
     public int BonusAgility { get; set; }
     public int BonusIntelligence { get; set; }
     public int BonusFaith { get; set; }
-
-    [JsonIgnore]
-    public Guid CharacterId { get; set; }
-    [JsonIgnore]
-    public Character? Character { get; set; } = null;
+    public Guid? CharacterId { get; set; } = null;
 
     public static Item Create(string name, string description, int bonusStrength, int bonusAgility, int bonusInteligence, int bonusFaith)
     {
@@ -36,17 +32,17 @@ public sealed class Item : Entity
         return item;
     }
 
-    private static string GenerateItemName(string name, int bonusStrength, int bonusAgility, int bonusInteligence, int bonusFaith)
+    public string GetFullItemName()
     {
-        var stats = new int[] { bonusStrength, bonusAgility, bonusInteligence, bonusFaith };
+        var stats = new int[] { BonusStrength, BonusAgility, BonusIntelligence, BonusFaith };
         var maxStat = stats.Max();
 
-        var fullName = name + " ";
+        var fullName = Name + " ";
 
-        if (maxStat == bonusStrength) fullName += ItemSufixes.STRENGTH;
-        if (maxStat == bonusAgility) fullName += ItemSufixes.AGILITY;
-        if (maxStat == bonusInteligence) fullName += ItemSufixes.INTELIGENCE;
-        if (maxStat == bonusFaith) fullName += ItemSufixes.FAITH;
+        if (maxStat == BonusStrength) fullName += ItemSufixes.STRENGTH;
+        else if (maxStat == BonusAgility) fullName += ItemSufixes.AGILITY;
+        else if (maxStat == BonusIntelligence) fullName += ItemSufixes.INTELIGENCE;
+        else if (maxStat == BonusFaith) fullName += ItemSufixes.FAITH;
 
         return fullName;
     }

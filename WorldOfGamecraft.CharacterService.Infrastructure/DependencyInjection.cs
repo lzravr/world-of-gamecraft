@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WorldOfGamecraft.CharacterService.Domain.CharacterClasses;
 using WorldOfGamecraft.CharacterService.Domain.Characters;
+using WorldOfGamecraft.CharacterService.Domain.Items;
 using WorldOfGamecraft.CharacterService.Infrastructure.Repositories;
 using WorldOfGamecraft.Common.Data;
 using WorldOfGamecraft.Common.IdentityService;
@@ -53,6 +54,7 @@ public static class DependencyInjection
 
         services.AddScoped<ICharacterRepository, CharacterRepository>();
         services.AddScoped<IClassRepository, ClassRepository>();
+        services.AddScoped<IItemRepository, ItemRepository>();
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<CharactersDbContext>());
 
