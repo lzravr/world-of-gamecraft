@@ -43,8 +43,9 @@ public class CharacterController : ControllerBase
         }
 
         var usernameClaim = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+        var roleClaim = claimsIdentity.FindFirst(ClaimTypes.Role)?.Value; 
 
-        var query = new GetCharacterByIdQuery(id, usernameClaim);
+        var query = new GetCharacterByIdQuery(id, usernameClaim, roleClaim);
 
         var result = await _sender.Send(query, cancellation);
 

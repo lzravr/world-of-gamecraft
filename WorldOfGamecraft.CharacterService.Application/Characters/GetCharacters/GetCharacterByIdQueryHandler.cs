@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using WorldOfGamecraft.CharacterService.Domain.Characters;
+using WorldOfGamecraft.Common;
 using WorldOfGamecraft.Common.Data;
 using WorldOfGamecraft.Common.IdentityService;
 
@@ -20,11 +21,16 @@ public sealed class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterB
 
     public async Task<CharacterDetailsResponse?> Handle(GetCharacterByIdQuery request, CancellationToken cancellationToken)
     {
-        var accountId = await _identityServiceClient.GetAccountIdByUsername(request.OwnerUsername, cancellationToken);
+        string? accountId = null;
+
+        if (request.Role.Equals(Role.User.ToString()))
+        {
+            accountId = await _identityServiceClient.GetAccountIdByUsername(request.OwnerUsername, cancellationToken);
+        }
 
         var character = await _characterRepository.GetByIdAsync(request.Id, cancellationToken);
 
-        if (!accountId.Equals(character?.CreatedBy.ToString()))
+        if (accountId is not null && !accountId.Equals(character?.CreatedBy.ToString()))
         {
             throw new NotCharacterOwnerException();
         }
