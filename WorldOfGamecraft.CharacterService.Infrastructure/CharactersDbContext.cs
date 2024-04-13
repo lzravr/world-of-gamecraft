@@ -13,6 +13,14 @@ public sealed class CharactersDbContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Character>()
+            .HasIndex(c => c.Name)
+            .IsUnique();
+
+        modelBuilder.Entity<Class>()
+            .HasIndex(c => c.Name)
+            .IsUnique();
+
         FakeData.Init();
 
         var noAgi = FakeData.Items.Where(i => i.BonusAgility == 0).ToList();
