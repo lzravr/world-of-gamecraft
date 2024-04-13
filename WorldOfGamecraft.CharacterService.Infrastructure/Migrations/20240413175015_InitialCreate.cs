@@ -38,6 +38,7 @@ namespace WorldOfGamecraft.CharacterService.Infrastructure.Migrations
                     base_agility = table.Column<int>(type: "integer", nullable: false),
                     base_intelligence = table.Column<int>(type: "integer", nullable: false),
                     base_faith = table.Column<int>(type: "integer", nullable: false),
+                    created_by = table.Column<Guid>(type: "uuid", nullable: false),
                     class_id = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
@@ -62,7 +63,7 @@ namespace WorldOfGamecraft.CharacterService.Infrastructure.Migrations
                     bonus_agility = table.Column<int>(type: "integer", nullable: false),
                     bonus_intelligence = table.Column<int>(type: "integer", nullable: false),
                     bonus_faith = table.Column<int>(type: "integer", nullable: false),
-                    character_id = table.Column<Guid>(type: "uuid", nullable: false)
+                    character_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -71,8 +72,7 @@ namespace WorldOfGamecraft.CharacterService.Infrastructure.Migrations
                         name: "fk_items_characters_character_id",
                         column: x => x.character_id,
                         principalTable: "characters",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.InsertData(
@@ -80,24 +80,24 @@ namespace WorldOfGamecraft.CharacterService.Infrastructure.Migrations
                 columns: new[] { "id", "description", "name" },
                 values: new object[,]
                 {
-                    { new Guid("1309b85f-e0bc-4754-abd8-8b11e13b61ac"), "Cumque mollitia rerum necessitatibus quasi facere tempora.", "Rogue" },
-                    { new Guid("27847584-1797-484f-a31b-fc1011eebb09"), "Id dolorem recusandae commodi commodi voluptatibus totam.", "Warrior" },
-                    { new Guid("5332f2f4-5116-42eb-9d1a-c6b395ac3818"), "Vero eveniet alias ipsum qui et eveniet qui qui sapiente.", "Elf" },
-                    { new Guid("53f96b8f-be67-4890-ac5b-f82867612726"), "Beatae omnis sint aspernatur quia ipsum deleniti ad magni.", "Mage" },
-                    { new Guid("ee252b1b-3539-48b2-b792-b8da3042839f"), "Dolore eos rerum vel dolorum soluta dolorem ea cum suscipit.", "Priest" },
-                    { new Guid("f0925ea0-3ac6-4458-8dce-aea903a23333"), "Nobis perferendis ea pariatur.", "Necromancer" }
+                    { new Guid("3d30bf8c-4e53-4f47-9eef-33701e3a7b19"), "Assumenda nobis qui delectus corporis placeat laboriosam modi rerum velit.", "Warrior" },
+                    { new Guid("72f3e124-ebca-45f7-9882-c9ed4eee7c06"), "Et soluta eos rerum voluptates.", "Elf" },
+                    { new Guid("8cc132e6-52f0-4f16-83b5-f29e43ca3abd"), "Nisi nobis nihil et reprehenderit aut laudantium vero perspiciatis.", "Priest" },
+                    { new Guid("9d0e44fd-4577-43f7-b158-1737ab1c795f"), "Aliquid consequatur in veritatis fugiat numquam ducimus neque.", "Rogue" },
+                    { new Guid("b158dd00-8b10-44c4-b5f9-87e8641d3dec"), "Natus nulla eum recusandae ex id ut quo corporis id.", "Necromancer" },
+                    { new Guid("c75551bc-d02c-4e82-b17d-00fa5f16fa36"), "Vel delectus commodi et accusamus accusamus vero perferendis eos et.", "Mage" }
                 });
 
             migrationBuilder.InsertData(
                 table: "characters",
-                columns: new[] { "id", "base_agility", "base_faith", "base_intelligence", "base_strength", "class_id", "health", "mana", "name" },
+                columns: new[] { "id", "base_agility", "base_faith", "base_intelligence", "base_strength", "class_id", "created_by", "health", "mana", "name" },
                 values: new object[,]
                 {
-                    { new Guid("00bd5ca7-efa2-4937-baae-232f5f5c4929"), 21, 43, 28, 21, new Guid("53f96b8f-be67-4890-ac5b-f82867612726"), 1118, 336, "CarterTheNational Program Planner" },
-                    { new Guid("1cabccc7-0242-4c8d-bd8e-b39c388be554"), 17, 31, 26, 29, new Guid("1309b85f-e0bc-4754-abd8-8b11e13b61ac"), 802, 102, "KayleeTheCorporate Paradigm Coordinator" },
-                    { new Guid("2a388228-c79d-4194-bbea-c1d43e83559f"), 26, 17, 11, 17, new Guid("27847584-1797-484f-a31b-fc1011eebb09"), 1211, 349, "DorisTheDynamic Factors Planner" },
-                    { new Guid("abac6546-b5dd-4722-bd15-edbd7582f58f"), 28, 24, 29, 24, new Guid("f0925ea0-3ac6-4458-8dce-aea903a23333"), 1160, 171, "JeffTheChief Interactions Manager" },
-                    { new Guid("ae9c7d2e-1c09-4a66-9516-a15dc28f1a6e"), 33, 21, 42, 13, new Guid("5332f2f4-5116-42eb-9d1a-c6b395ac3818"), 810, 251, "MoisesTheInternational Security Consultant" }
+                    { new Guid("21f9c31a-490d-4eda-a5b7-cc237f45a889"), 17, 47, 20, 30, new Guid("b158dd00-8b10-44c4-b5f9-87e8641d3dec"), new Guid("00000000-0000-0000-0000-000000000000"), 1068, 331, "BrayanTheInternational Intranet Strategist" },
+                    { new Guid("8023da36-f5dc-4314-9c56-79bcf21ca876"), 44, 30, 20, 20, new Guid("8cc132e6-52f0-4f16-83b5-f29e43ca3abd"), new Guid("00000000-0000-0000-0000-000000000000"), 1020, 130, "NedraTheChief Operations Developer" },
+                    { new Guid("a86c1c30-f798-493f-9576-fa031d4e293c"), 10, 23, 45, 38, new Guid("c75551bc-d02c-4e82-b17d-00fa5f16fa36"), new Guid("00000000-0000-0000-0000-000000000000"), 1167, 124, "AlfredaTheHuman Response Developer" },
+                    { new Guid("b16e8485-d109-453d-8b03-d51883a821f8"), 48, 28, 24, 45, new Guid("c75551bc-d02c-4e82-b17d-00fa5f16fa36"), new Guid("00000000-0000-0000-0000-000000000000"), 1242, 316, "NoeTheCentral Security Producer" },
+                    { new Guid("f6a496af-d9da-432d-be7c-2bc0f00604fc"), 22, 17, 31, 33, new Guid("9d0e44fd-4577-43f7-b158-1737ab1c795f"), new Guid("00000000-0000-0000-0000-000000000000"), 928, 311, "BennyTheForward Brand Architect" }
                 });
 
             migrationBuilder.InsertData(
@@ -105,11 +105,11 @@ namespace WorldOfGamecraft.CharacterService.Infrastructure.Migrations
                 columns: new[] { "id", "bonus_agility", "bonus_faith", "bonus_intelligence", "bonus_strength", "character_id", "description", "name" },
                 values: new object[,]
                 {
-                    { new Guid("0ef4f863-23cc-444a-91cf-9ba65c54138a"), 31, 19, 29, 17, new Guid("2a388228-c79d-4194-bbea-c1d43e83559f"), "Eum neque eaque expedita provident eaque.", "orchid" },
-                    { new Guid("9d7ea528-4e31-47f7-83d0-44bc93ae6727"), 11, 40, 21, 40, new Guid("1cabccc7-0242-4c8d-bd8e-b39c388be554"), "Aliquid maiores voluptate minima dignissimos qui ut sit vel.", "dagon" },
-                    { new Guid("9f1482b0-2177-4adb-a536-65f5664fd99c"), 33, 37, 49, 31, new Guid("abac6546-b5dd-4722-bd15-edbd7582f58f"), "Voluptatibus sapiente temporibus occaecati.", "black_king_bar" },
-                    { new Guid("e21235bc-261a-4780-b54e-0a774be5f5bb"), 14, 29, 50, 42, new Guid("ae9c7d2e-1c09-4a66-9516-a15dc28f1a6e"), "Totam necessitatibus illo qui.", "monkey_king_bar" },
-                    { new Guid("eecb8993-8477-4adb-893c-6b5fd1f1f69a"), 27, 39, 26, 23, new Guid("00bd5ca7-efa2-4937-baae-232f5f5c4929"), "Molestiae ratione et odit necessitatibus accusantium.", "force_staff" }
+                    { new Guid("15afbf36-1847-44d6-b5f6-fc32f2804cdb"), 50, 39, 25, 22, new Guid("a86c1c30-f798-493f-9576-fa031d4e293c"), "Autem voluptates eum adipisci.", "soul_booster" },
+                    { new Guid("2c256179-eabb-4b16-90d3-7444a8ae533e"), 10, 37, 18, 40, new Guid("b16e8485-d109-453d-8b03-d51883a821f8"), "Molestiae corrupti delectus id.", "hood_of_defiance" },
+                    { new Guid("7435e0fd-a0aa-407c-9bb8-0467e0396bd3"), 38, 16, 21, 29, new Guid("8023da36-f5dc-4314-9c56-79bcf21ca876"), "Voluptatibus ratione dolor repellendus impedit debitis odio deserunt soluta.", "shivas_guard" },
+                    { new Guid("75d3df17-6ff6-4dfc-8e69-dd55f314c768"), 33, 17, 47, 34, new Guid("f6a496af-d9da-432d-be7c-2bc0f00604fc"), "Repudiandae dolorem rem culpa.", "assault" },
+                    { new Guid("9f4f0103-699e-48a0-8908-1a62c0438883"), 15, 42, 38, 32, new Guid("21f9c31a-490d-4eda-a5b7-cc237f45a889"), "Consectetur repellendus omnis.", "refresher" }
                 });
 
             migrationBuilder.CreateIndex(
