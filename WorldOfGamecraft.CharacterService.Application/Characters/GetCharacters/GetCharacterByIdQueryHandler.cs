@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
+using Newtonsoft.Json;
 using WorldOfGamecraft.CharacterService.Domain.Characters;
 using WorldOfGamecraft.Common;
+using WorldOfGamecraft.Common.Data.Cache;
 using WorldOfGamecraft.Common.IdentityService;
 
 namespace WorldOfGamecraft.CharacterService.Application.Characters.GetCharacters;
@@ -10,12 +12,14 @@ public sealed class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterB
     private readonly ICharacterRepository _characterRepository;
     private readonly IMapper _mapper;
     private readonly IIdentityServiceClient _identityServiceClient;
+    private readonly IRedisCache _cache;
 
-    public GetCharacterByIdQueryHandler(ICharacterRepository characterRepository, IMapper mapper, IIdentityServiceClient identityServiceClient)
+    public GetCharacterByIdQueryHandler(ICharacterRepository characterRepository, IMapper mapper, IIdentityServiceClient identityServiceClient, IRedisCache cache)
     {
         _characterRepository = characterRepository;
         _mapper = mapper;
         _identityServiceClient = identityServiceClient;
+        _cache = cache;
     }
 
     public async Task<CharacterDetailsResponse?> Handle(GetCharacterByIdQuery request, CancellationToken cancellationToken)
@@ -25,6 +29,14 @@ public sealed class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterB
         if (request.Role.Equals(Role.User.ToString()))
         {
             accountId = await _identityServiceClient.GetAccountIdByUsername(request.OwnerUsername, cancellationToken);
+        }
+
+        // try to get cached
+        var characterJson = await _cache.GetAsync(request.Id, cancellationToken);
+
+        if (characterJson is not null)
+        {
+            return JsonConvert.DeserializeObject<CharacterDetailsResponse>(characterJson);
         }
 
         var character = await _characterRepository.GetByIdAsync(request.Id, cancellationToken);
@@ -39,10 +51,12 @@ public sealed class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterB
             throw new NotCharacterOwnerException();
         }
 
-        if (character is not null)
-            CalculateStats(character);
+        CalculateStats(character);
 
-        return _mapper.Map<Character?, CharacterDetailsResponse?>(character);
+        var result = _mapper.Map<Character?, CharacterDetailsResponse?>(character);
+        await _cache.SetAsync(character.Id, JsonConvert.SerializeObject(result), cancellationToken);
+
+        return result;
     }
 
     private void CalculateStats(Character character)

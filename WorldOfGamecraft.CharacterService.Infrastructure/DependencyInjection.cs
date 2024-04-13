@@ -9,6 +9,7 @@ using WorldOfGamecraft.CharacterService.Domain.Characters;
 using WorldOfGamecraft.CharacterService.Domain.Items;
 using WorldOfGamecraft.CharacterService.Infrastructure.Repositories;
 using WorldOfGamecraft.Common.Data;
+using WorldOfGamecraft.Common.Data.Cache;
 using WorldOfGamecraft.Common.IdentityService;
 
 namespace WorldOfGamecraft.CharacterService.Infrastructure;
@@ -55,6 +56,8 @@ public static class DependencyInjection
         services.AddScoped<ICharacterRepository, CharacterRepository>();
         services.AddScoped<IClassRepository, ClassRepository>();
         services.AddScoped<IItemRepository, ItemRepository>();
+
+        services.AddScoped<IRedisCache, RedisCache>();
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<CharactersDbContext>());
 
