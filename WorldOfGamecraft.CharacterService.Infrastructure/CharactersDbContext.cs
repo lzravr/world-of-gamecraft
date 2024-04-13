@@ -21,11 +21,9 @@ public sealed class CharactersDbContext : DbContext, IUnitOfWork
             .HasIndex(c => c.Name)
             .IsUnique();
 
-        //modelBuilder.Entity<Item>()
-        //    .HasOne(i => i.Character)
-        //    .WithMany()
-        //    .HasForeignKey(i => i.CharacterId)
-        //    .IsRequired(false);
+        modelBuilder.Entity<Item>()
+            .Property<uint>("Version")
+            .IsRowVersion();
 
         FakeData.Init();
 

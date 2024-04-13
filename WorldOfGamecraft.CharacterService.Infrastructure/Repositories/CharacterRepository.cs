@@ -40,7 +40,9 @@ public sealed class CharacterRepository : Repository<Character, Guid>, ICharacte
                         }).ToList()
                     };
 
-        var result = await query.FirstOrDefaultAsync();
+        var result = await query
+            .Where(c => c.Id.Equals(id))
+            .FirstOrDefaultAsync();
 
         return result;
     }

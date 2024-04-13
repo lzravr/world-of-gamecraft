@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WorldOfGamecraft.CharacterService.Application.Items;
 using WorldOfGamecraft.CharacterService.Application.Items.AddItems;
 using WorldOfGamecraft.CharacterService.Application.Items.GetItems;
+using WorldOfGamecraft.CharacterService.Application.Items.SwapItems;
 
 namespace WorldOfGamecraft.CharacterService.Api.Controllers.Items;
 
@@ -49,5 +50,27 @@ public class ItemController : ControllerBase
         var result = await _sender.Send(command, cancellationToken);
 
         return CreatedAtRoute(nameof(GetByIdAsync), new { id = result }, result);
+    }
+
+    [HttpPost]
+    [Route("grant")]
+    public async Task<IActionResult> GrantItem(GrantItemRequest request, CancellationToken cancellationToken)
+    {
+        var command = new GrantItemCommand(request.ItemId, request.CharacterId);
+
+        await _sender.Send(command, cancellationToken);
+
+        return Ok();
+    }
+
+    [HttpPost]
+    [Route("gift")]
+    public async Task<IActionResult> GiftItem(GrantItemRequest request, CancellationToken cancellationToken)
+    {
+        var command = new GrantItemCommand(request.ItemId, request.CharacterId);
+
+        await _sender.Send(command, cancellationToken);
+
+        return Ok();
     }
 }
