@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "d7eb65a3-06bf-4426-bedd-a497b86c7743",
+		"name": "WorldOfGamecraft.CharacterService.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33729368"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "character",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/character/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibGF6YXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzEzMDI0MTcyfQ.xrjfrkZbGJxvSIXiXVXl7EVOYkJ8tFRSORfWYHHt_592c4dUvK9xfSojxY5CYDeCD-Bssgi9Y-lxecsvtruGng",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{CHARACTER_BASE}}/api/character/:id",
+											"host": [
+												"{{CHARACTER_BASE}}"
+											],
+											"path": [
+												"api",
+												"character",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "91c26d54-4ac8-419b-bf63-9f467fe9a633",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/character/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"character",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"health\": \"<integer>\",\n  \"mana\": \"<integer>\",\n  \"baseStrength\": \"<integer>\",\n  \"baseAgility\": \"<integer>\",\n  \"baseIntelligence\": \"<integer>\",\n  \"baseFaith\": \"<integer>\",\n  \"classId\": \"<uuid>\",\n  \"class\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  },\n  \"items\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"bonusStrength\": \"<integer>\",\n      \"bonusAgility\": \"<integer>\",\n      \"bonusIntelligence\": \"<integer>\",\n      \"bonusFaith\": \"<integer>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"bonusStrength\": \"<integer>\",\n      \"bonusAgility\": \"<integer>\",\n      \"bonusIntelligence\": \"<integer>\",\n      \"bonusFaith\": \"<integer>\"\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/character",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibGF6YXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzEzMDI0MTcyfQ.xrjfrkZbGJxvSIXiXVXl7EVOYkJ8tFRSORfWYHHt_592c4dUvK9xfSojxY5CYDeCD-Bssgi9Y-lxecsvtruGng",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/character",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"character"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/character",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"character"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"name\": \"<string>\",\n    \"health\": \"<integer>\",\n    \"mana\": \"<integer>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"health\": \"<integer>\",\n    \"mana\": \"<integer>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "/api/character",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibGF6YXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNzEzMDI0MTcyfQ.xrjfrkZbGJxvSIXiXVXl7EVOYkJ8tFRSORfWYHHt_592c4dUvK9xfSojxY5CYDeCD-Bssgi9Y-lxecsvtruGng",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Pudge\",\n  \"health\": 3000,\n  \"mana\": 300,\n  \"className\": \"Rogue\",\n  \"strength\": 45,\n  \"agility\": 20,\n  \"inteligence\": 5,\n  \"faith\": 0\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/character",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"character"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"health\": \"<integer>\",\n  \"mana\": \"<integer>\",\n  \"className\": \"<string>\",\n  \"strength\": \"<integer>\",\n  \"agility\": \"<integer>\",\n  \"inteligence\": \"<integer>\",\n  \"faith\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/character",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"character"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<uuid>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "item",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/item/:id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYW1lTWFzdGVyIiwiZXhwIjoxNzEzMDI0ODg2fQ.60KcjJHG6Dp6B5JOEOIWp3_1SeJY0ZwUai6IOrueRfoCNmiV_gFGTWbmynrIC59iU7FLtnU3kBO9kUNPJLuBEw",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{CHARACTER_BASE}}/api/item/:id",
+											"host": [
+												"{{CHARACTER_BASE}}"
+											],
+											"path": [
+												"api",
+												"item",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2625112f-fd45-4bd5-a6d0-a03951ea72ef"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/api/item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYW1lTWFzdGVyIiwiZXhwIjoxNzEzMDI0ODg2fQ.60KcjJHG6Dp6B5JOEOIWp3_1SeJY0ZwUai6IOrueRfoCNmiV_gFGTWbmynrIC59iU7FLtnU3kBO9kUNPJLuBEw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/item",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"item"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/item",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"item"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"strength\": \"<integer>\",\n    \"agility\": \"<integer>\",\n    \"intelligence\": \"<integer>\",\n    \"faith\": \"<integer>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"strength\": \"<integer>\",\n    \"agility\": \"<integer>\",\n    \"intelligence\": \"<integer>\",\n    \"faith\": \"<integer>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "/api/item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYW1lTWFzdGVyIiwiZXhwIjoxNzEzMDI0ODg2fQ.60KcjJHG6Dp6B5JOEOIWp3_1SeJY0ZwUai6IOrueRfoCNmiV_gFGTWbmynrIC59iU7FLtnU3kBO9kUNPJLuBEw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"bonusStrength\": 0,\r\n  \"bonusAgility\": 0,\r\n  \"bonusInteligence\": 0,\r\n  \"bonusFaith\": 0\r\n}"
+								},
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/item",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/item/grant",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYW1lTWFzdGVyIiwiZXhwIjoxNzEzMDM5MDY0fQ.O2yMMIoIq686Vg5ssyV9wOAr2Rncmep6mwE9VqZuxWgnniqbh_lVCRFmymOEmT909xueERjpfT89eSu1oxVctA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"itemId\": \"80c07348-6bbc-4712-8f34-4b364cda1c45\",\r\n  \"characterId\": \"d8acd593-b6f7-4c34-95ab-f4bf14b40908\"\r\n}"
+								},
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/item/grant",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"item",
+										"grant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/item/gift",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJHYW1lTWFzdGVyIiwiZXhwIjoxNzEzMDM5MDY0fQ.O2yMMIoIq686Vg5ssyV9wOAr2Rncmep6mwE9VqZuxWgnniqbh_lVCRFmymOEmT909xueERjpfT89eSu1oxVctA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"itemId\": \"80c07348-6bbc-4712-8f34-4b364cda1c45\",\r\n  \"characterId\": \"d8acd593-b6f7-4c34-95ab-f4bf14b40908\"\r\n}"
+								},
+								"url": {
+									"raw": "{{CHARACTER_BASE}}/api/item/gift",
+									"host": [
+										"{{CHARACTER_BASE}}"
+									],
+									"path": [
+										"api",
+										"item",
+										"gift"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
