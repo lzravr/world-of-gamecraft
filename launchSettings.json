@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "worldofgamecraft.accountservice.api": "StartDebugging"
+        "worldofgamecraft.accountservice.api": "StartDebugging",
+        "worldofgamecraft.characterservice.api": "StartDebugging"
       }
     }
   }

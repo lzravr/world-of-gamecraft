@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Polly;
+using Serilog;
 using WorldOfGamecraft.AccountService.Infrastructure;
 
 namespace WorldOfGamecraft.AccountService.Api.Extensions;
@@ -11,6 +13,11 @@ public static class ApplicationBuilderExtensions
 
         using var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-        dbContext.Database.Migrate();
+        var retryPolicy = Policy.Handle<Exception>().WaitAndRetry(3, retryAttemp => TimeSpan.FromSeconds(5));
+
+        retryPolicy.Execute(() =>
+        {
+            dbContext.Database.Migrate();
+        });
     }
 }

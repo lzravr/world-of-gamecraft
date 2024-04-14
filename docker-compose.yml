@@ -1,6 +1,20 @@
 version: '3.4'
 
 services:
+  gamecraftiddb:
+    image: postgres:latest
+    container_name: Gamecraft.IdentityDb
+    environment:
+      - POSTGRES_DB=gamecraftidentity
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - ./.containers/database/id:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    ports:
+      - 5432:5432
+
   worldofgamecraft.accountservice.api:
     image: ${DOCKER_REGISTRY-}worldofgamecraftaccountserviceapi
     container_name: Gamecraft.Account
@@ -8,19 +22,42 @@ services:
       context: .
       dockerfile: WorldOfGamecraft.AccountService.Api/Dockerfile
     ports:
-      - 8888:8080
-      - 8881:8081
+      - 8080:8080
+      - 8081:8081
     depends_on:
-      - gamecraft-db
+      - gamecraftiddb
 
-  gamecraft-db:
+  gamecraftchardb:
     image: postgres:latest
-    container_name: Gamecraft.Db
+    container_name: Gamecraft.CharactersDb
     environment:
-      - POSTGRES_DB=gamecraft-identity
+      - POSTGRES_DB=gamecraftcharacters
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
     volumes:
+      - ./.containers/database/char:/var/lib/postgresql/data
+    expose:
+      - "5433"
+    ports:
+      - 5433:5433
+    command: -p 5433
+
+  worldofgamecraft.characterservice.api:
+    image: ${DOCKER_REGISTRY-}worldofgamecraftcharacterserviceapi
+    container_name: Gamecraft.Characters
+    build:
+      context: .
+      dockerfile: WorldOfGamecraft.CharacterService.Api/Dockerfile
+    ports:
+      - 8082:8080
+      - 8083:8081
+    depends_on:
+      - gamecraftchardb
+
+  redis:
+    image: redis:latest
+    container_name: Gamecraft.Cache
+    volumes:
       - ./.containers/database:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 6379:6379

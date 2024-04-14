@@ -4,10 +4,10 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>3db02f19-4764-4c9e-b21d-4488c0619109</ProjectGuid>
+    <ProjectGuid>2645475d-fefe-4628-b502-524cabb2d5e9</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>worldofgamecraft.accountservice.api</DockerServiceName>
+    <DockerServiceName>worldofgamecraft.characterservice.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

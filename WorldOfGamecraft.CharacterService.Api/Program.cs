@@ -37,7 +37,7 @@ app.UseSwagger();
     app.AddMigrations();
 //}
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
